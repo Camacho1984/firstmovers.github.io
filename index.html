@@ -82,8 +82,6 @@
          }
          return tempDiv.innerHTML;
         }
-	var osm2 = new L.TileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {minZoom: 0, maxZoom: 13});
-	var miniMap = new L.Control.MiniMap(osm2, { toggleDisplay: true }).addTo(map);
         // add class to format popup if it contains media
 		function addClassToPopupIfMedia(content, popup) {
 			var tempDiv = document.createElement('div');
