@@ -96,7 +96,15 @@
 				popup._contentNode.classList.remove('media');
 			}
 		}
-        var zoomControl = L.control.zoom({
+	var title = L.control();
+		title.onAdd = function (map) {
+	var div = L.DomUtil.create('div', 'info');
+		div.innerHTML +=
+		'<h1>Sweet way</h1>Plataforma de análisis geoestadístico';
+	return div;
+		};
+		title.addTo(map);
+	var zoomControl = L.control.zoom({
             position: 'topleft'
         }).addTo(map);
         var measureControl = new L.Control.Measure({
