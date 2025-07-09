@@ -123,7 +123,7 @@
 			}
 		}
 
-	var escala = L.control.scale({ position: 'bottomleft', imperial: true});
+	var escala = L.control.scale({ position: 'bottomleft', imperial: true, maxWidth: 100px });
 		map.addControl(escala);	
 	
 	var title = L.control();
@@ -139,10 +139,10 @@
         }).addTo(map);
         var measureControl = new L.Control.Measure({
             position: 'topleft',
-            primaryLengthUnit: 'metros',
-            secondaryLengthUnit: 'kilometros',
-            primaryAreaUnit: 'm2',
-            secondaryAreaUnit: 'Ha'
+            primaryLengthUnit: 'meters',
+            secondaryLengthUnit: 'kilometers',
+            primaryAreaUnit: 'sqmeters',
+            secondaryAreaUnit: 'hectares'
         });
         measureControl.addTo(map);
         document.getElementsByClassName('leaflet-control-measure-toggle')[0].innerHTML = '';
