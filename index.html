@@ -139,10 +139,10 @@
         }).addTo(map);
         var measureControl = new L.Control.Measure({
             position: 'topleft',
-            primaryLengthUnit: 'meters',
-            secondaryLengthUnit: 'kilometers',
-            primaryAreaUnit: 'sqmeters',
-            secondaryAreaUnit: 'hectares'
+            primaryLengthUnit: 'metros',
+            secondaryLengthUnit: 'kilometros',
+            primaryAreaUnit: 'm2',
+            secondaryAreaUnit: 'Ha'
         });
         measureControl.addTo(map);
         document.getElementsByClassName('leaflet-control-measure-toggle')[0].innerHTML = '';
