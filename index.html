@@ -39,19 +39,19 @@
     </head>
     <body>
 	<div id="map">
-        <div id="dashboard" style="position:absolute; top:160px; right:30px; width:250px; background:white; padding:10px; z-index:999; box-shadow:0 0 10px rgba(0,0,0,0.3);">
+        <div id="dashboard" style="position:absolute; top:170px; right:15px; width:250px; background:white; padding:10px; z-index:999; box-shadow:0 0 10px rgba(0,0,0,0.3);">
 	<h2>Estadísticas</h2>
 	<p><strong>Unidades económicas:</strong> <span id="total"></span></p>
 	 <p><strong>Empleados promedio:</strong> <span id="ocupacion"></span></p>
-
-	<select id="filtroEmpleados" style="position: absolute; top: 10px; left: 50px; z-index: 1000;">
+		
+ 	</div>
+	<div>
+	<select id="filtroEmpleados" style="position: absolute; top: 200px; left: 250px; z-index: 1000;">
 	  <option value="all">Todas las cafeterías</option>
 	  <option value="5+">Más de 5 empleados</option>
 	  <option value="10+">Más de 10 empleados</option>
 	</select>
-
-	
- 	</div>    
+	</div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
         <script src="js/L.Control.Layers.Tree.min.js"></script>
