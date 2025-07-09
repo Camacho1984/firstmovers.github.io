@@ -122,7 +122,6 @@
 				popup._contentNode.classList.remove('media');
 			}
 		}
-	var escala = L.control.scale({ position: 'bottomleft', imperial: false}); map.addControl(escala);
 		
 	var title = L.control();
 		title.onAdd = function (map) {
@@ -180,7 +179,10 @@
                 mouseover: highlightFeature,
             });
 	
-            var popupContent = '<table>\
+		var escala = L.control.scale({ position: 'bottomright', imperial: true});
+		map.addControl(escala);
+            
+		var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['nom_estab'] !== null ? autolinker.link(String(feature.properties['nom_estab']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
