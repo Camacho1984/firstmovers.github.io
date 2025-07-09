@@ -24,12 +24,34 @@
             padding: 0;
             margin: 0;
         }
+  #contenedor {
+    display: flex;
+  }
+
+  #panel {
+    width: 300px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-right: 1px solid #ccc;
+  }
         </style>
 
     </head>
     <body>
         <div id="map">
         </div>
+	  <div id="panel">
+   		 <h3>Estadísticas</h3>
+   			 <div id="stats">
+     			 Cargando datos...
+   		 </div>
+		<div id="dashboard" style="position:absolute; top:10px; right:10px; width:300px; background:white; padding:10px; z-index:999; box-shadow:0 0 10px rgba(0,0,0,0.3);">
+  		<h3>Estadísticas</h3>
+  		<p><strong>Total:</strong> <span id="total"></span></p>
+ 		 <p><strong>Ocupación promedio:</strong> <span id="ocupacion"></span></p>
+		</div>
+
+ 	</div>    
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
         <script src="js/L.Control.Layers.Tree.min.js"></script>
@@ -99,8 +121,8 @@
 				popup._contentNode.classList.remove('media');
 			}
 		}
-	
-	
+
+		
 	var title = L.control();
 		title.onAdd = function (map) {
 	var div = L.DomUtil.create('div', 'info');
@@ -523,6 +545,22 @@
 	var miniMap = new L.Control.MiniMap(osm2, { toggleDisplay: true }).addTo(map);
 	
 	L.control.mousePosition().addTo(map);
+
+	fetch('https://mi-api.com/ubicaciones')
+    .then(response => response.json())
+    .then(data => {
+      // Mostrar marcadores en el mapa
+      data.forEach(punto => {
+        L.marker([punto.lat, punto.lng])
+          .addTo(map)
+          .bindPopup(punto.nombre);
+      });
+
+      // Calcular y mostrar estadísticas
+      document.getElementById('stats').innerHTML = `
+        <p>Total de puntos: <strong>${data.length}</strong></p>
+      `;
+    });
 	
         </script>
     </body>
