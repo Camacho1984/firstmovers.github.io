@@ -123,7 +123,7 @@
 			}
 		}
 
-	var escala = L.control.scale({ position: 'bottomleft', imperial: true, maxWidth: 50px });
+	var escala = L.control.scale({position: 'bottomleft', maxWidth: 100, metric: true, imperial: false}).addTo(map);
 		map.addControl(escala);	
 	
 	var title = L.control();
