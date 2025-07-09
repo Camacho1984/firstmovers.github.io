@@ -122,7 +122,7 @@
 				popup._contentNode.classList.remove('media');
 			}
 		}
-
+	var escala = L.control.scale({ position: 'bottomleft', imperial: false}); map.addControl(escala);
 		
 	var title = L.control();
 		title.onAdd = function (map) {
